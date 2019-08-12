@@ -10,14 +10,26 @@ class SeasController < ApplicationController
   end
 
   def create
-    @sea = Sea.new(params)
-    @sea.save
-    redirect_to show_path
+    
+    @sea = Sea.create(sea_params)
+
+    redirect_to sea_path(@sea)
   end
 
   def show
     @sea = Sea.find(params[:id])
   end 
+
+  def edit
+    @sea = Sea.find(params[:id])
+  end
+
+  def update
+    @sea = Sea.find(params[:id])
+    @sea.update(sea_params)
+   
+    redirect_to sea_path(@sea.id)
+  end
 
 
   private

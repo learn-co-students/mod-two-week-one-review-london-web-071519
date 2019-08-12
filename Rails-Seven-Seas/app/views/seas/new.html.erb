@@ -1,3 +1,8 @@
+
+
+
+
+<div class="container">
 <%= form_for @sea do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -25,4 +30,9 @@
 
   <%=  f.submit %>
 
+  <div class="text-center">
+    <button class="btn btn-info" style="margin: 1em"><a class="btn-info" href="/seas">All Seas</a></button>
+  </div>
+
   <% end %>
+  </div>
